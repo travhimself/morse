@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Morse</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less">
+
+    <script src="js/less.min.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/socketio.js" type="text/javascript"></script>
+    <script src="js/transmit.js" type="text/javascript"></script>
+
+    <!--[if IE]><link rel="shortcut icon" href="img/favicon.ico"><![endif]-->
+    <!-- <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.png"> -->
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>broadcasting</h1>
+        </header>
+
+        <section class="input">
+
+            <div class="inputstream"></div>
+
+        </section>
+
+        <section class="keys">
+
+            <div class="keyblock">
+                <div class="key wide" data-key="space" data-value="break">space</div>
+                <div class="instruction">break</div>
+            </div>
+
+            <div class="keyblock">
+                <div class="key square" data-key="i" data-value="dot">i</div>
+                <div class="instruction">dot</div>
+            </div>
+
+            <div class="keyblock">
+                <div class="key square" data-key="o" data-value="dash">o</div>
+                <div class="instruction">dash</div>
+            </div>
+
+            <div class="keyblock">
+                <div class="key wide" data-key="del" data-value="delete">del</div>
+                <div class="instruction">delete</div>
+            </div>
+
+        </section>
+
+        <footer>
+
+        </footer>
+
+    </div><!-- end .container -->
+
+</body>
+
+</html>
