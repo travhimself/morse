@@ -48,6 +48,25 @@
                 text-align: center;
                 text-transform: uppercase;
             }
+
+            button.showchart {
+                .button(40px, #fff, @colorbody);
+                position: absolute;
+                top: 20px;
+                right: 0;
+                width: 40px;
+                padding: 10px;
+
+                &.open {
+                    right: 200px;
+                }
+
+                i {
+                    .signal(4px);
+                    margin: 0 0 4px 0;
+                    background: #fff;
+                }
+            }
         }
 
         section {
@@ -160,28 +179,53 @@
             }
         }
 
+        aside.chart {
+            position: absolute;
+            top: 0;
+            right: -200px;
+            bottom: 0;
+            width: 200px;
+            overflow: scroll;
+            background: @colorbody;
+
+            &.open {
+                right: 0;
+            }
+
+            .chart-inner {
+                padding: 40px;
+
+                .entry {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-bottom: 5px;
+
+                    .letter {
+                        margin-right: 10px;
+                        color: #fff;
+                        -webkit-font-smoothing: antialiased;
+                    }
+
+                    .sequence {
+                        display: flex;
+                        flex-direction: row;
+
+                        i {
+                            .signal(@signalsizesmall);
+
+                            &[data-key="dot"],
+                            &[data-key="dash"] {
+                                background: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         i {
-            display: block;
-            height: @signalsize;
-            margin-right: @signalsize;
-            margin-bottom: @signalsize * 2;
-            font-size: 0;
-            color: @colorbody;
-
-            &[data-key=break] {
-                width: @signalsize * 3;
-                background: @colorbodyextralight;
-            }
-
-            &[data-key=dot] {
-                width: @signalsize;
-                background: @colorbody;
-            }
-
-            &[data-key=dash] {
-                width: @signalsize * 3;
-                background: @colorbody;
-            }
+            .signal(@signalsize);
         }
 
         .instruction {
@@ -238,6 +282,7 @@
 @orange: #f57b5e;
 
 @signalsize: 10px;
+@signalsizesmall: 4px;
 
 .button(@height, @textcolor, @bgcolor) {
     display: block;
@@ -249,4 +294,26 @@
     text-transform: uppercase;
     color: @textcolor;
     background: @bgcolor;
+}
+
+.signal(@size) {
+    display: block;
+    height: @size;
+    margin-right: @size;
+    font-size: 0;
+
+    &[data-key=break] {
+        width: @size * 3;
+        background: @colorbodyextralight;
+    }
+
+    &[data-key=dot] {
+        width: @size;
+        background: @colorbody;
+    }
+
+    &[data-key=dash] {
+        width: @size * 3;
+        background: @colorbody;
+    }
 }
