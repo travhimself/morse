@@ -11,13 +11,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet/less" type="text/css" href="css/styles.less">
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet/less" type="text/css" href="/css/styles.less">
 
-    <script src="js/less.min.js" type="text/javascript"></script>
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/socketio.js" type="text/javascript"></script>
-    <script src="js/transmit.js" type="text/javascript"></script>
+    <script src="/js/less.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/socketio.js" type="text/javascript"></script>
+    <script src="/js/transmit.js" type="text/javascript"></script>
 
     <!--[if IE]><link rel="shortcut icon" href="img/favicon.ico"><![endif]-->
     <!-- <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png">
@@ -30,7 +31,7 @@
     <div class="container">
 
         <header>
-            <h1>broadcasting</h1>
+            <h1>Transmitting on Channel <span class="channelid"></span></h1>
         </header>
 
         <section class="input">
@@ -42,25 +43,30 @@
         <section class="keys">
 
             <div class="keyblock">
-                <div class="key wide" data-key="space" data-value="break">space</div>
+                <button class="key wide" data-key="space" data-value="break">space</button>
                 <div class="instruction">break</div>
             </div>
 
             <div class="keyblock">
-                <div class="key square" data-key="i" data-value="dot">i</div>
+                <button class="key square" data-key="i" data-value="dot">i</button>
                 <div class="instruction">dot</div>
             </div>
 
             <div class="keyblock">
-                <div class="key square" data-key="o" data-value="dash">o</div>
+                <button class="key square" data-key="o" data-value="dash">o</button>
                 <div class="instruction">dash</div>
             </div>
 
             <div class="keyblock">
-                <div class="key wide" data-key="del" data-value="delete">del</div>
+                <button class="key wide" data-key="del" data-value="delete">del</button>
                 <div class="instruction">delete</div>
             </div>
 
+        </section>
+
+        <section class="aux">
+            <div class="instruction">Share URL with receivers</div>
+            <div class="url"></div>
         </section>
 
         <footer>
