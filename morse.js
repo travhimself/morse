@@ -87,7 +87,7 @@ io.on('connection', function (socket) {
 
             // forward signal on to receivers
             // by default the emit would go back to the sender; with broadcast flag we emit to everyone except the sender
-            socket.broadcast.to(data.channelid).emit('forward', data.inputstring);
+            socket.broadcast.to(data.channelid).emit('forward', data.signal);
         }
     });
 

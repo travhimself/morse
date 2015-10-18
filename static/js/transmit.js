@@ -34,19 +34,19 @@ $(document).ready(function() {
         switch (e.which) {
             case 32:
                 // space bar
-                sendkey('break', ' ');
+                sendsignal('break');
                 break;
             case 73:
                 // i
-                sendkey('dot', '.');
+                sendsignal('dot');
                 break;
             case 79:
                 // o
-                sendkey('dash', '_');
+                sendsignal('dash');
                 break;
             case 8:
                 // del
-                sendkey('delete', '');
+                sendsignal('delete');
                 break;
             default:
                 // any other key
@@ -61,37 +61,34 @@ $(document).ready(function() {
     var buttondelete = $('section.keys .keyblock .key[data-value=delete]');
 
     buttonbreak.on('click', function (e) {
-        sendkey('break', ' ');
+        sendsignal('break');
     });
 
     buttondot.on('click', function (e) {
-        sendkey('dot', ' ');
+        sendsignal('dot');
     });
 
     buttondash.on('click', function (e) {
-        sendkey('dash', ' ');
+        sendsignal('dash');
     });
 
     buttondelete.on('click', function (e) {
-        sendkey('delete', ' ');
+        sendsignal('delete');
     });
 
 
     // append to input pane, collect string, and emit to server
     var $inputpane = $('section.input .inputstream');
-    var inputstring = '';
 
-    var sendkey = function(key, signal) {
-        if ( key === 'delete' ) {
+    var sendsignal = function(signal) {
+        if ( signal === 'delete' ) {
             $('i:last', $inputpane).remove();
         } else {
-            $inputpane.append('<i data-key="' + key + '">' + signal + '</i>');
+            $inputpane.append('<i data-key="' + signal + '">' + signal + '</i>');
         }
 
-        inputstring = $inputpane.html();
-
         var transmission = {
-            'inputstring': inputstring,
+            'signal': signal,
             'channelid': credentials.channelid,
             'channeltransmissionkey': credentials.channeltransmissionkey
         };

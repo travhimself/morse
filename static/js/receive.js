@@ -25,7 +25,11 @@ $(document).ready(function() {
     var $outputpane = $('section.output .outputstream');
 
     socket.on('forward', function (data) {
-        $outputpane.html(data);
+        if ( data === 'delete' ) {
+            $('i:last', $outputpane).remove();
+        } else {
+            $outputpane.append('<i data-key="' + data + '">' + data + '</i>');
+        }
     });
 
 });
