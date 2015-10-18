@@ -1,268 +1,241 @@
 /* Styles
 ================================================== */
 
-// xs devices (phones+)
-@media (min-width: 1px) {
+body {
+    font-family: 'Work Sans', sans-serif;
 
-    body {
-        font-family: 'Work Sans', sans-serif;
+    * {
+        box-sizing: border-box;
+    }
 
-        * {
-            box-sizing: border-box;
+    color: @colorbody;
+
+    ::selection {
+
+    }
+
+    a:link {
+
+    }
+
+    a:visited {
+
+    }
+
+    a:hover {
+
+    }
+
+    a:active {
+
+    }
+
+    a:focus {
+
+    }
+
+    .container {
+        min-width: 300px;
+        margin: 0 auto;
+    }
+
+    header {
+        margin: 20px 0 60px 0;
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
         }
 
-        color: @colorbody;
-
-        ::selection {
-
-        }
-
-        a:link {
-
-        }
-
-        a:visited {
-
-        }
-
-        a:hover {
-
-        }
-
-        a:active {
-
-        }
-
-        a:focus {
-
-        }
-
-        .container {
-            margin: 20px 0;
-        }
-
-        header {
-            margin: 60px 0;
-
-            h1 {
-                text-align: center;
-                text-transform: uppercase;
-            }
-
-            button.showchart {
-                .button(40px, #fff, @colorbody);
-                position: absolute;
-                top: 20px;
-                right: 0;
-                width: 40px;
-                padding: 10px;
-
-                &.open {
-                    right: 200px;
-                }
-
-                i {
-                    .signal(4px);
-                    margin: 0 0 4px 0;
-                    background: #fff;
-                }
-            }
-        }
-
-        section {
-            margin: 60px 0;
-
-            button {
-                .button(60px, #fff, @orange);
-                -webkit-font-smoothing: antialiased;
-            }
-
-        }
-
-        section.start,
-        section.join {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            button {
-                width: 300px;
-            }
-        }
-
-        section.start {
-
-        }
-
-        section.join {
-
-            input.transmissionid {
-                display: block;
-                width: 300px;
-                height: 60px;
-                border: 2px solid @colorbody;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-        }
-
-        section.input {
-            position: relative;
-            overflow: hidden;
-            height: 120px;
-            background: #eee;
-
-            .inputstream {
-                position: absolute;
-                top: 0;
-                right: 52%;
-                bottom: 0;
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                align-items: center;
-                width: 9999px;
-            }
-        }
-
-        section.keys {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-bottom: 60px;
-
-            .keyblock {
-                margin-right: 20px;
-
-                &.last-child {
-                    margin-right: 0;
-                }
-
-                .key {
-                    .button(60px, #fff, @orange);
-                    -webkit-font-smoothing: antialiased;
-                    border-radius: 4px;
-
-                    &.square {
-                        width: 60px;
-                        padding: 0;
-                    }
-
-                    &.wide {
-                        padding: 0 60px;
-                    }
-                }
-
-                .instruction {
-                    margin-top: 20px;
-                }
-            }
-        }
-
-        section.output {
-            width: 80%;
-            padding: 20px 40px;
-            margin: 0 auto;
-            background: #eee;
-
-            .outputstream {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-        }
-
-        section.aux {
-
-            .url {
-                text-align: center;
-            }
-        }
-
-        aside.chart {
+        button.showchart {
+            .button(40px, #fff, @colorbody);
             position: absolute;
-            top: 0;
-            right: -200px;
-            bottom: 0;
-            width: 200px;
-            overflow: scroll;
-            background: @colorbody;
+            top: 20px;
+            right: 0;
+            width: 40px;
+            padding: 10px;
 
             &.open {
-                right: 0;
+                right: 200px;
             }
 
-            .chart-inner {
-                padding: 40px;
+            i {
+                .signal(4px);
+                margin: 0 0 4px 0;
+                background: #fff;
+            }
+        }
+    }
 
-                .entry {
+    section {
+        margin: 60px 20px;
+
+        button {
+            .button(60px, #fff, @orange);
+            -webkit-font-smoothing: antialiased;
+        }
+
+    }
+
+    section.start,
+    section.join {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            width: 280px;
+        }
+    }
+
+    section.start {
+
+    }
+
+    section.join {
+
+        input.transmissionid {
+            display: block;
+            width: 280px;
+            height: 60px;
+            border: 2px solid @colorbody;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 0;
+        }
+    }
+
+    section.input {
+        position: relative;
+        overflow: hidden;
+        height: 120px;
+        margin: 60px 0;
+        background: #eee;
+
+        .inputstream {
+            position: absolute;
+            top: 0;
+            right: 52%;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            width: 9999px;
+        }
+    }
+
+    section.keys {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 60px;
+
+        .keyblock {
+            margin-right: 20px;
+
+            &.last-child {
+                margin-right: 0;
+            }
+
+            .key {
+                .button(60px, #fff, @orange);
+                -webkit-font-smoothing: antialiased;
+                border-radius: 4px;
+
+                &.square {
+                    width: 60px;
+                    padding: 0;
+                }
+
+                &.wide {
+                    padding: 0 60px;
+                }
+            }
+
+            .instruction {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    section.output {
+        width: 80%;
+        padding: 20px 40px;
+        margin: 0 auto;
+        background: #eee;
+
+        .outputstream {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    section.aux {
+
+        .url {
+            text-align: center;
+        }
+    }
+
+    aside.chart {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        overflow-y: scroll;
+        background: @colorbody;
+
+        &.open {
+            width: 200px;
+        }
+
+        .chart-inner {
+            width: 180px;
+            padding: 40px;
+
+            .entry {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 5px;
+
+                .letter {
+                    width: 20px;
+                    margin-right: 10px;
+                    color: #fff;
+                    -webkit-font-smoothing: antialiased;
+                }
+
+                .sequence {
                     display: flex;
                     flex-direction: row;
-                    align-items: center;
-                    margin-bottom: 5px;
 
-                    .letter {
-                        margin-right: 10px;
-                        color: #fff;
-                        -webkit-font-smoothing: antialiased;
-                    }
+                    i {
+                        .signal(@signalsizesmall);
 
-                    .sequence {
-                        display: flex;
-                        flex-direction: row;
-
-                        i {
-                            .signal(@signalsizesmall);
-
-                            &[data-key="dot"],
-                            &[data-key="dash"] {
-                                background: #fff;
-                            }
+                        &[data-key="dot"],
+                        &[data-key="dash"] {
+                            background: #fff;
                         }
                     }
                 }
             }
         }
-
-        i {
-            .signal(@signalsize);
-        }
-
-        .instruction {
-            margin: 0 0 20px 0;
-            color: @colorbodylight;
-            font-size: 12px;
-            text-align: center;
-            font-size: 12px;
-        }
-
     }
 
-}
-
-// sm devices (tablets+)
-@media (min-width: 768px) {
-
-    body {
-
+    i {
+        .signal(@signalsize);
     }
 
-}
-
-// md devices (desktops+)
-@media (min-width: 992px) {
-
-    body {
-
-    }
-
-}
-
-// lg devices (big desktops)
-@media (min-width: 1200px) {
-
-    body {
-
+    .instruction {
+        margin: 0 0 20px 0;
+        color: @colorbodylight;
+        font-size: 12px;
+        text-align: center;
+        font-size: 12px;
     }
 
 }
@@ -294,6 +267,10 @@
     text-transform: uppercase;
     color: @textcolor;
     background: @bgcolor;
+
+    &:focus {
+        outline: 0;
+    }
 }
 
 .signal(@size) {
