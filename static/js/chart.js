@@ -54,7 +54,7 @@ $(document).ready(function() {
         });
 
         // build string with letter:sequence pair
-        var entrystring = '<div class="entry"><span class="letter">' + key + '</span><span class="sequence">' + sequencestring + '</span></div>';
+        var entrystring = '<div class="entry"><div class="letter">' + key + '</div><div class="sequence">' + sequencestring + '</div></div>';
 
         // add to chart container
         $chartcontainerinner.append(entrystring);
